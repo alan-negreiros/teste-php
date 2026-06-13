@@ -79,8 +79,12 @@ Se você fechar o terminal e quiser subir o projeto novamente, basta abrir um te
 
 ```powershell
 
-Start-Process "C:\Program Files\MariaDB 12.3\bin\mariadbd.exe" -ArgumentList '--datadir=C:\Users\Alan\Desktop\teste-php\db-data','--port=3306','--console'; Start-Process "C:\Users\Alan\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.3_Microsoft.Winget.Source_8wekyb3d8bbwe\php.exe" -ArgumentList '-S','localhost:8000' -WorkingDirectory 'C:\Users\Alan\Desktop\teste-php'
+É importante que o projeto esteja na sua área de trabalho, caso escolhar outro local será necessário atualizar o caminho do comando a seguir:
+
+Start-Process "C:\Program Files\MariaDB 12.3\bin\mariadbd.exe" -ArgumentList "--datadir=$HOME\teste-php\db-data","--port=3306","--console"; Start-Process "$HOME\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.3_Microsoft.Winget.Source_8wekyb3d8bbwe\php.exe" -ArgumentList "-S","localhost:8000" -WorkingDirectory "$HOME\Desktop\teste-php"
+
+alterar também o caminhdo do datadir encontrado no arquivo my.ini.
 
 ```
 ```
-2. Abra o navegador e acesse: http://localhost:8000/
+2. Abra o navegador e acesse: http://localhost:8000/c
